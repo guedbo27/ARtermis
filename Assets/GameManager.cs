@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         //Input for compTesting
         while (_a > 0)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.touchCount > 0)
             {
                 Portal _portal = Instantiate(placePortal, location.position, location.rotation).GetComponent<Portal>();
                 _portal.transform.Rotate(Vector3.right * 90);
@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
                 camera.portals.Add(_portal);
                 exitPortals[_a - 1].linkedPortal = _portal;
                 _a--;
+                yield return new WaitForSeconds(2);
             }
             yield return null;
         }
