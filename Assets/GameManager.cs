@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         while (_a > 0)
         {
             if (Input.touchCount > 0)
+            //if (Input.GetMouseButtonDown(0))
             {
                 Portal _portal = Instantiate(placePortal, location.position, location.rotation).GetComponent<Portal>();
                 _portal.transform.Rotate(Vector3.right * 90);
